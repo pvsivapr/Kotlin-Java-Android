@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidSelfLearningTutorials</string>
+    <string name="display_alert_button_Text">Show Display Alert</string>
+    <string name="enter_first_recyclerview_layout_entry_button_Text">First Recycler View</string>
+</resources>
