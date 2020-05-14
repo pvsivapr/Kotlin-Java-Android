@@ -83,6 +83,10 @@ fun main(args : Array<String>)
     //val personSecondaryConstructor1 = PersonSecondaryConstructor1("Jhon", 22, 23456)
     //val personSecondaryConstructor2 = PersonSecondaryConstructor2(22, 23456)
 
+    //CLASSES
+    println("\n\n\n")
+    println("2020-May-5th,6th")
+    println("::::::::::::: CLASSES :::::::::::::")
     println("Getter and Setter methods in Classes examples")
     val personClass1 = PersonClass()
     personClass1.name = "bruce"
