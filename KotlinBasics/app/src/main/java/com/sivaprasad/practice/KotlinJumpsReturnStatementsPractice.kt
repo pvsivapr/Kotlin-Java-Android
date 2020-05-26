@@ -5,6 +5,50 @@ package com.sivaprasad.practice
 //
 //infix fun Int.isMultipleOf(multiple :Int) = this%multiple == 0
 
+fun foo() {
+
+    listOf(1, 2, 3, 4, 5).forEach lit@{
+        if (it == 3) return@lit // local return to the caller of the lambda, i.e. the forEach loop
+        print(it)
+    }
+    print(" done with explicit label")
+
+
+    listOf(1, 2, 3, 4, 5).forEach {
+        if (it == 3) return@forEach // local return to the caller of the lambda, i.e. the forEach loop
+        print(it)
+    }
+    print(" done with implicit label")
+
+
+    run loop@{
+        listOf(1, 2, 3, 4, 5).forEach {
+            if (it == 3) return@loop // non-local return from the lambda passed to run
+            print(it)
+        }
+    }
+    print(" done with nested loop")
+
+
+    listOf(1, 2, 3, 4, 5).forEach(fun(value: Int) {
+        if (value == 3) return  // local return to the caller of the anonymous fun, i.e. the forEach loop
+        print(value)
+    })
+    print(" done with anonymous function")
+
+
+    listOf(1, 2, 3, 4, 5).forEach {
+        if (it == 3) return // non-local return directly to the caller of foo()
+        print(it)
+    }
+    println("this point is unreachable")
+
+}
+
+//fun main() {
+//    foo()
+//}
+
 fun main(args: Array<String>)
 {
     //JUMPS AND RETURN
@@ -15,6 +59,7 @@ fun main(args: Array<String>)
     //labeledJumps1();
     //println("'it' operator example for lamda functions")
     //someFunction1();
+    foo()
 }
 
 fun someFunction2()

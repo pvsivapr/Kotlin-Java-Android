@@ -17,7 +17,7 @@ fun main()
     println("")
 
     println("value of name1 cannot be null so can be declared as follows name1.length")
-    println("name2 length = ${name1.length}")
+    println("name1 length = ${name1.length}")
     println("value of name2 is null so declared as follows name2?.length")
     println("name2 length = ${name2?.length}")
     println("printing 'hello null' if name2 is having null value")
