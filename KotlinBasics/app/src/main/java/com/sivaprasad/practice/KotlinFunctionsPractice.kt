@@ -31,15 +31,32 @@ fun main()
     println("\n\n\n")
     println("::::::::::::: HIGHER ORDER FUNCTIONS :::::::::::::")
     println("Accepts function as an input and returns function as return type")
-    var helloWorldHigherOrderFunction = {
-        println("Hello World, Welcome to Higher order function")
+    val helloWorldHigherOrderFunction1 = {
+        println("Hello World, Welcome to Higher order function, This is Test 1")
     }
-    callMeNow(helloWorldHigherOrderFunction)
+    var helloWorldHigherOrderFunction2 = {
+        println("Hello World, Welcome to Higher order function, This is Test 2")
+    }
+    var getProductHigherOrderFunction1 = {
+       a: Int, b: Int -> a * b
+    }
+    callMeNowTest1(helloWorldHigherOrderFunction1)
+    callMeNowTest2(helloWorldHigherOrderFunction2)
 }
 
-fun callMeNow(passLamdaFunction : () -> Unit)
+fun callMeNowTest1(passLamdaFunction : () -> Unit)
 {
     passLamdaFunction()
+}
+
+fun callMeNowTest2(passLamdaFunction : () -> Unit)
+{
+    //passLamdaFunction()
+}
+
+fun productHigherOrderFunction1(productHigherOrder : (a: Int, b: Int) -> Int)
+{
+//    productHigherOrder();
 }
 
 fun simpleFunction1(a : Int) : Int
