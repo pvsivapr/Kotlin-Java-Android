@@ -2,24 +2,62 @@ package com.tutorials.APIIntegrationsWithRetrofit
 
 import retrofit2.Call
 import retrofit2.Response
-import java.util.function.Consumer
 
-fun GetData()
+fun GetEmployeeData()
 {
     var callEmployeeService = EmployeeAPIService.create().getEmployees();
     callEmployeeService.enqueue(object: retrofit2.Callback<EmployeeResponse>{
         override fun onFailure(call: Call<EmployeeResponse>, t: Throwable) {
             //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            println(t.message)
+            callEmployeeService.cancel()
         }
 
-        override fun onResponse( call: Call<EmployeeResponse>, response: Response<EmployeeResponse> ) {
+        override fun onResponse(call: Call<EmployeeResponse>, response: Response<EmployeeResponse>) {
             //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             var employeeResponse: EmployeeResponse? = response.body()
             var employees = employeeResponse?.employees;
             if(employees != null)
             {
 //                employees.forEach()
+                employees.forEach {
+                    println("Employee Name:  ${it.employeeName} \n" +
+                            "Employee Salary:  ${it.employeeSalary} \n" +
+                            "Employee Age:  ${it.employeeAge} \n" +
+                            "Employee Image:  ${it.employeeImage}")
+                }
             }
+            callEmployeeService.cancel()
+        }
+    } )
+}
+
+fun GetEmployeeDataByID(id: String)
+{
+//    UpdateTextView("Loading")
+    var callEmployeeService = EmployeeAPIService.create().getEmployeesById(id);
+    callEmployeeService.enqueue(object: retrofit2.Callback<EmployeeIdResponse>{
+        override fun onFailure(call: Call<EmployeeIdResponse>, t: Throwable) {
+            //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            println(t.message)
+//            UpdateTextView("Failed")
+            callEmployeeService.cancel()
+        }
+
+        override fun onResponse(call: Call<EmployeeIdResponse>, response: Response<EmployeeIdResponse>) {
+            //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+//            UpdateTextView("Success")
+            var employeeResponse: EmployeeIdResponse? = response.body()
+            var employee = employeeResponse?.employee;
+            if(employee != null)
+            {
+                println("Employee Name:  ${employee.employeeName} \n" +
+                        "Employee Salary:  ${employee.employeeSalary} \n" +
+                        "Employee Age:  ${employee.employeeAge} \n" +
+                        "Employee Image:  ${employee.employeeImage}")
+            }
+            callEmployeeService.cancel()
         }
     } )
 }
@@ -28,6 +66,8 @@ fun main(args: Array<String>)
 {
     DataDisplay();
     //GetData();
+    GetEmployeeData()
+    GetEmployeeDataByID("4")
 }
 
 fun DataDisplay()

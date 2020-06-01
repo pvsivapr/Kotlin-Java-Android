@@ -38,3 +38,11 @@ data class Employee(
     @SerializedName("profile_image")
     val employeeImage: String
 )
+
+data class EmployeeIdResponse(
+    @SerializedName("status")
+    val status: String,
+
+    @SerializedName("data")
+    val employee: Employee
+)

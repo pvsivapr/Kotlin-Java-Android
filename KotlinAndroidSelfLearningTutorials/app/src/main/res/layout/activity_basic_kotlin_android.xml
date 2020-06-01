@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:text="Start Service"
+        android:id="@+id/btn_basic_kotlin_android_service_basic_start_service"
+        android:onClick="StartServiceButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Stop Service"
+        android:id="@+id/btn_basic_kotlin_android_service_basic_stop_service"
+        android:onClick="StopServiceButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Start Intent Service"
+        android:id="@+id/btn_basic_kotlin_android_service_intent_start_service"
+        android:onClick="StartServiceButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Stop Intent Service"
+        android:id="@+id/btn_basic_kotlin_android_service_intent_stop_service"
+        android:onClick="StopServiceButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
