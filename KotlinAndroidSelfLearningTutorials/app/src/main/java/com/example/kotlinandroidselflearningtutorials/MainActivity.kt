@@ -10,6 +10,7 @@ import com.tutorials.APIIntegrationsWithRetrofit.EmployeeAPIService
 import com.tutorials.APIIntegrationsWithRetrofit.EmployeeIdResponse
 import com.tutorials.APIIntegrationsWithRetrofit.EmployeeResponse
 import com.tutorials.BasicKotlinAndroid.BasicKotlinAndroidActivity
+import com.tutorials.BasicMVVMDesignPatterns.TimeViewerActivity
 import retrofit2.Call
 import retrofit2.Response
 import java.lang.Exception
@@ -94,8 +95,8 @@ class MainActivity : AppCompatActivity() {
             var butttonView: Button? = view as Button;
             if(butttonView != null)
             {
-                //GetEmployeeData()
-                GetEmployeeDataByID("4")
+                GetEmployeeData()
+                //GetEmployeeDataByID("4")
             }
         }
     }
@@ -113,7 +114,10 @@ class MainActivity : AppCompatActivity() {
                     {
                         var i = 0;
 
-                        var androidActivityIntent = Intent(this, BasicKotlinAndroidActivity::class.java)
+//                        var androidActivityIntent = Intent(this, BasicKotlinAndroidActivity::class.java)
+//                        startActivity(androidActivityIntent)
+
+                        var androidActivityIntent = Intent(this, TimeViewerActivity::class.java)
                         startActivity(androidActivityIntent)
                     }
                     else ->

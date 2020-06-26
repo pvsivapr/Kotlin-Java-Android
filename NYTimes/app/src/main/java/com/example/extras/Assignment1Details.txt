@@ -1,0 +1,31 @@
+Developed code should be pushed to Cognizant Gitlab portal https://code.cognizant.com/
+
+
+Use MVVM Design Pattern
+Kotlin Programming language
+Use Navigation from Android Jetpack
+Use RxJava for asynchronous service calls
+Use Retrofit for making rest calls
+Write unit test cases for view model(s)
+Write Instrumentation test cases
+Store the response in database using room to support offline support
+Generate and publish code coverage results
+leverage today's best coding practices
+Use dependency injection framework Dagger2
+Use constraint layouts to design the UI
+Use databinding to update the UI
+Design Principles to follow
+
+Separation of Concerns   -  Code should be classified properly in all the layers.
+Single Responsibility  - The component should be design to have better testability
+Loosely coupled Design – This also help better testability.
+
+
+//personal information change
+//App Id:    04b3eae5-e21e-44c3-a092-38b8667ba6b5
+//key:       dDdTIvBJI9Csu4kcGNlU32I0GBAmGXct
+//secret:    ocYHla3H05Gtz7oJ
+
+
+//https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=yourkey
+//https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=dDdTIvBJI9Csu4kcGNlU32I0GBAmGXct

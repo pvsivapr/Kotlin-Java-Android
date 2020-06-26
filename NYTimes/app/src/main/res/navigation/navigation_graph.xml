@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/NYItemsListPageFragment">
+    <fragment
+        android:id="@+id/NYItemsListPageFragment"
+        android:name="com.nytimes.uiactivities.NYItemsListPageFragment"
+        android:label="NYItemsListPageFragment" >
+        <action
+            android:id="@+id/action_NYItemsListPageFragment_to_NYItemDetailPageFragment2"
+            app:destination="@id/NYItemDetailPageFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/NYItemDetailPageFragment2"
+        android:name="com.nytimes.uiactivities.NYItemDetailPageFragment"
+        android:label="NYItemDetailPageFragment">
+<!--        <argument android:name="nyTimesItemsDetailBundle" app:argType="com.nytimes.networking.NYItemsModel"/>-->
+<!--        <argument android:name="nyTimesItemsDetailBundle" app:argType="String[]"/>-->
+        <action
+            android:id="@+id/action_NYItemDetailPageFragment2_to_NYItemsListPageFragment"
+            app:destination="@id/NYItemsListPageFragment"
+            app:popUpTo="@id/NYItemsListPageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

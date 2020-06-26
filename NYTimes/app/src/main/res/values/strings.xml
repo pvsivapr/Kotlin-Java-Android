@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NYTimes</string>
+    <string name="button_arts_text">Arts</string>
+</resources>
